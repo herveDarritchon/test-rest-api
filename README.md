@@ -1,32 +1,64 @@
 ## Synopsis
 
-At the top of the file there should be a short introduction and/ or overview that explains **what** the project is. This description should match descriptions added for package managers (Gemspec, package.json, etc.)
+This little sample of code is made to show how it's simple to test ReST API (integration test) with [Rest-Assured](https://code.google.com/p/rest-assured/) compare to home-made code.
 
 ## Code Example
 
-Show what the library does as concisely as possible, developers should be able to figure out **how** your project solves their problem by looking at the code example. Make sure the API you are showing off is obvious, and that your code is short and concise.
+You will find a stupid ReST Service (http://localhost:9000/worlds) that pretend to create, get and destroy a world. This list of worlds is stored in a H2 database. Nothing terrible. I use Spring-Boot heavily to save time and code ;). It's very straightforward.
 
 ## Motivation
 
-A short description of the motivation behind the creation and maintenance of the project. This should explain **why** the project exists.
+I have done this code to show how to test a ReST API and how is it simple with the right framework instead of home made code.
 
 ## Installation
 
-Provide code examples and explanations of how to get the project.
+`mvn clean install` to build the app and run the test.
+`mvn spring-boot:run` to run the app and test it with postman or paw for exemple.
 
 ## API Reference
 
-Depending on the size of the project, if it is small and simple enough the reference docs can be added to the README. For medium size to larger projects it is important to at least provide a link to where the API reference docs live.
+**Create a world :**
+
+`POST http://localhost:9000/worlds
+{
+    "name": "Munster",
+    "type": "PVP"
+}
+`
+
+**Destroy a world :**
+
+`DELETE http://localhost:9000/worlds/{id}
+`
+
+**Retrieve a world:**
+
+`GET http://localhost:9000/worlds/{id}
+`
+
 
 ## Tests
 
-Describe and show how to run the tests with code examples.
+To run tests, just type `mvn test` to run the tests.
+Easy, no ?
 
 ## Contributors
 
-Let people know how they can dive into the project, include important links to things like issue trackers, irc, twitter accounts if applicable.
+Please feel free to add some tests, add some code, I havn't yet done tests for POST and DELETE nor my home-made code is good enough. Some refactoring is needed ...
+
 
 ## License
 
-A short snippet describing the license (MIT, Apache, etc.)
-
+			DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+                   Version 2, December 2004
+ 
+Copyright (C) 2004 Sam Hocevar <sam@hocevar.net>
+ 
+Everyone is permitted to copy and distribute verbatim or modified
+copies of this license document, and changing it is allowed as long
+as the name is changed.
+ 
+           DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+  	TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+ 
+ 0. You just DO WHAT THE FUCK YOU WANT TO.
