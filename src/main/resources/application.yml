@@ -1,0 +1,10 @@
+server:
+    port: 9000
+security:
+    user:
+        name: admin
+        password: secret
+management:
+    security:
+        role: SUPERUSER  
+    
